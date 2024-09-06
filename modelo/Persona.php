@@ -175,7 +175,10 @@ class Persona{
                 
                 while ($row = $base->Registro()){
                     $personita = new Persona();
-                    $personita->setear($row['nrodni'], $row['apellido'], $row['nombre'], $row['fechanac'], $row['telefono'], $row['domicilio']);
+                    $autito = new Auto();
+                    // mmmmmmm pienso. la alternativa es directamente sacar el colautos del setear
+                    $autitosPersona = $autito->listar("dniduenio = ".$row['nrodni']);
+                    $personita->setear($row['nrodni'], $row['apellido'], $row['nombre'], $row['fechanac'], $row['telefono'], $row['domicilio'], $autitosPersona);
                     array_push($arreglo, $personita);
                 }
                
