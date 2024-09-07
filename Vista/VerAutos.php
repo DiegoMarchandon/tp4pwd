@@ -3,6 +3,7 @@
 $titulo = "TP4 - Ejercicio 3";
 include_once("estructura/header.php");
 include_once("../control/ABMAuto.php");
+include_once("../control/ABMPersona.php");
 
 $ABMAuto = new ABMAuto;
 $ABMPersona = new ABMPersona;
